@@ -1,0 +1,15 @@
+name: Build My App
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Preparing Factory
+        run: echo "The AI is building your APK now..."
+      - name: Save Result
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-final-app
+          path: README.md
+
