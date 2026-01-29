@@ -16,4 +16,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: My-First-App
-          path: README.md
+          path: .
