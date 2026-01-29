@@ -1,14 +1,19 @@
-name: Build My App
+name: Build Android APK
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Preparing Factory
-        run: echo "The AI is building..."
-      - name: Save Result
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Build with Meaning
+        run: echo "Ready to compile your Android project..."
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: my-final-app
+          name: My-First-App
           path: README.md
