@@ -1,19 +1,16 @@
-name: Build Android APK
+name: Build AI Factory APK
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Build with Meaning
-        run: echo "Ready to compile your Android project..."
-      - name: Upload APK
+      - name: Preparing Project Files
+        run: |
+          echo "Packing Abdou AI Factory..."
+          zip -r AI_Factory_App.zip .
+      - name: Upload Final Product
         uses: actions/upload-artifact@v4
         with:
-          name: My-First-App
-          path: .
+          name: Abdou-AI-App-Package
+          path: AI_Factory_App.zip
