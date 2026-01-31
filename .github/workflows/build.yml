@@ -1,16 +1,16 @@
-name: Build AI Factory APK
+name: Build APK
 on: [push, workflow_dispatch]
 jobs:
-  build:
+  android:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build with Buildozer
+      - name: Build
         uses: ArtemSerebrennkov/buildozer-action@v1
         with:
           buildozer_version: master
-      - name: Upload APK
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: Abdou-AI-App-Package
+          name: Abdou-AI-App
           path: bin/*.apk
