@@ -1,6 +1,6 @@
 [app]
 title = DevAI
-package.name = devai
+package.name = abdoushop
 package.domain = org.test
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
