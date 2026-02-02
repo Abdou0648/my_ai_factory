@@ -6,12 +6,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build with Buildozer
-        uses: ArtemSerebrennkov/buildozer-action@v1
+        uses: EnKrypt/buildozer-action@v0.1.1
         with:
           buildozer_version: master
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Abdou-AI-App
+          name: My-Final-App
           path: bin/*.apk
-          
