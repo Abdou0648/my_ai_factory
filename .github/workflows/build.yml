@@ -1,16 +1,16 @@
-name: Build APK
+name: Android-Build
 on: [push, workflow_dispatch]
 jobs:
-  android:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build
+      - name: Build with Buildozer
         uses: ArtemSerebrennkov/buildozer-action@v1
         with:
           buildozer_version: master
-      - name: Upload
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Abdou-AI-App
+          name: My-App-Package
           path: bin/*.apk
