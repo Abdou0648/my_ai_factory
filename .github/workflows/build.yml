@@ -1,10 +1,14 @@
-name: Android-Build
-on: [push, workflow_dispatch]
+name: Build-Android-APK
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - name: Build with Buildozer
         uses: ArtemSerebrennkov/buildozer-action@v1
         with:
@@ -12,5 +16,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: My-App-Package
+          name: Abdou-AI-App
           path: bin/*.apk
